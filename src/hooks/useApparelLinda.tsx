@@ -75,7 +75,7 @@ export const useApparelLinda = () => {
         const id = uuid();
         setItems((a) => [...a, { id }]);
 
-        const image = await sdk.images.createFromFile({ file });
+        const image = await sdk.images.createFromFile(file);
         // setItems((l) =>
         //     l.map((a) => {
         //         if (a.id === id) {

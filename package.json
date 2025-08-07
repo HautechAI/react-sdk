@@ -11,10 +11,11 @@
   "license": "ISC",
   "packageManager": "pnpm@10.5.0",
   "dependencies": {
-    "@hautechai/sdk": "^0.3.21",
+    "@hautechai/sdk": "^2.2.1",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "prettier": "^3.6.2",
     "react": "^19.1.0"
   },
   "peerDependencies": {

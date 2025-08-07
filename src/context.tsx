@@ -4,7 +4,16 @@ import { createContext, PropsWithChildren, useContext, useMemo } from 'react';
 const SDKContext = createContext<SDK | null>(null);
 
 export const SDKProvider = (props: PropsWithChildren<{ token: string }>) => {
-    const sdk = useMemo(() => createSDK({ authToken: () => props.token }), [props.token]);
+    const sdk = useMemo(
+        () =>
+            createSDK({
+                authToken: () => props.token,
+                wsConfig: {
+                    transports: ['websocket'],
+                },
+            }),
+        [props.token],
+    );
     return <SDKContext.Provider value={sdk}>{props.children}</SDKContext.Provider>;
 };
 
